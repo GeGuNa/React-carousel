@@ -1,0 +1,42 @@
+
+body {
+margin:auto;
+width:100%;
+}
+
+.mang_stories {
+display:flex;
+flex-wrap:nowrap;
+gap:8px;
+margin-bottom: 15px;
+overflow:hidden;
+}
+
+.mang_stories > div {
+position:relative;
+}
+
+
+.mang_stories img {
+width: 140px;
+height: 200px;
+object-fit: cover;
+border-radius:10px
+}
+
+.mang_storiespoabs {
+position: absolute;
+bottom: 6px;
+z-index: 999;
+color: #fff !important;
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+
+.Angle_scrolling_left {display:none; }
+.Angle_scrolling_right { display:none; }
+
+.Angle_setscrolling_left { display:block !important; }
+.Angle_setscrolling_right { display:block !important; }

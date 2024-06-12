@@ -166,7 +166,7 @@ s21zs.onscroll = (event) => {
   
   
      
- const a = new Array(10).fill(1)  
+ const a = new Array(130).fill(1)  
    
   
 

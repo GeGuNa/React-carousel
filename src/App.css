@@ -10,6 +10,7 @@ flex-wrap:nowrap;
 gap:8px;
 margin-bottom: 15px;
 overflow:hidden;
+scroll-behavior: smooth;
 }
 
 .mang_stories > div {

@@ -27,6 +27,7 @@ export function ShowStory(props) {
 export default function App() {
    
    
+ 
   
 //How many objects are there
 const [ShowToScroll, setShowToScroll] = useState(0)
@@ -122,29 +123,36 @@ if (sz>ss_hm2) {
 },[])
 
 
-function setScrl1(){
+/*
+
+
+const [scrollL, setscrollL] = useState(0)
+const [scrollR, setscrollR] = useState(0)
+
+
+*/
+function setScrollToRight() {
    
 
-      sSize1.current.scrollLeft +=150
-            
-
-   setscrollL(scrollL+1)
+   sSize1.current.scrollLeft +=150
+   setscrollR(scrollR+1)
    
-   
- if (scrollR>0)   
-   setscrollR(scrollR-1)
-
+   if (scrollL>0) {
+      setscrollL(scrollL-1) 
+   }
 
 
 }
    
- function setScrl12(){
+ function setScrollToLeft() {
+    
    sSize1.current.scrollLeft -=150
-   setscrollR(scrollR+1) 
-   
-    if (scrollL>0)  
-         setscrollL(scrollL-1)
-         
+   setscrollL(scrollL+1) 
+
+   if (scrollR>0) {
+      setscrollR(scrollR-1) 
+   }
+
          
  }
       
@@ -164,9 +172,8 @@ s21zs.onscroll = (event) => {
 };
   */ 
   
-  
      
- const a = new Array(130).fill(1)  
+ const a = new Array(20).fill(1)  
    
   
 
@@ -193,30 +200,36 @@ s21zs.onscroll = (event) => {
    <br/>
 
 
+    
+    
+    
+
 {(ShowToScroll == 1 && hwmNAyTimsScroll>0) && (<>
-
-{/*
-   
   
-
-const [scrollL, setscrollL] = useState(0)
-const [scrollR, setscrollR] = useState(0)
-   
-   */}
-
-{hwmNAyTimsScroll > 0 && scrollL!=hwmNAyTimsScroll && (<>
-  <button onClick={setScrl1}>Change +</button> 
-</>)}
-  
-  
- {hwmNAyTimsScroll > 0 && scrollL > 0  && scrollR!=hwmNAyTimsScroll && (<>
-    <br/>  <button onClick={setScrl12}>Change -</button>
+   {hwmNAyTimsScroll > 0 && scrollR>0 && scrollR!=0 && (<>
+     <div className="pleft" onClick={setScrollToLeft}>
+         <button>Change -</button>
+     </div> 
+   </>)}
+    
 </>)}
     
-   
-   
+    
+    
+    
+
+{(ShowToScroll == 1 && hwmNAyTimsScroll>0) && (<>
+
+
+{hwmNAyTimsScroll > 0 && scrollR!=hwmNAyTimsScroll && (<>
+   <div className="pright" onClick={setScrollToRight}> 
+            <button>Change +</button>
+       </div>
+</>)}
 
 </>)}
+
+
     
   
   
